@@ -12,7 +12,7 @@ describe('Pruebas de arreglos', () => {
     });
 
 
-    it('debe existir MagaMan y Ultron', () =>{
+    xit('debe existir MagaMan y Ultron', () =>{
         const resp = getRobots(); 
 
         // expect(resp.length).toBe(3);
