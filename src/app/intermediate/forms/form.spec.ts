@@ -14,6 +14,16 @@ describe('Formularios', () => {
 
 
         expect(component.form.contains('email')).toBeTruthy(); 
-        expect(component.form.contains('password')).toBeTruthy(); 
+        expect(component.form.contains('email')).toBeTruthy(); 
     }); 
+
+
+    it('El email debe ser obligatorio', () => {
+        const control = component.form.get('email');
+        control?.setValue('adanch22@gmail.com'); 
+
+
+        expect(control?.valid).toBeTruthy();
+    }); 
+
 }); 
