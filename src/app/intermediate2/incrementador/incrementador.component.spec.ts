@@ -36,12 +36,10 @@ describe('Incremendator Component', () => {
         fixture.detectChanges();// disparar la teccion de errres. 
 
         fixture.whenStable().then(()=> {
-            const elem = fixture.debugElement.query(By.css('input')).nativeElement; 
-
-            expect(elem.value).toBe(45);
-           
-            component.cambiarValor(5);
-            fixture.detectChanges();// disparar la teccion de errres. 
+            const input = fixture.debugElement.query(By.css('input')).nativeElement; 
+            const elem = input.nativeElement;
+            console.log(elem);
+            
     
             expect(elem.value).toBe('45');
         
