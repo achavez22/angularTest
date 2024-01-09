@@ -46,4 +46,26 @@ describe('Incremendator Component', () => {
         });
 
     });
+
+    it('Debe de incrementar/decrementar el valor en 5 con click en el boton.', ()=> {
+        const botones = fixture.debugElement.queryAll(By.css('.btn-primary'));
+
+        botones[0].triggerEventHandler('click', null);
+
+        expect(component.progreso).toBe(45);
+    });
+
+
+    it('En el titulo del componente debe mostrarse el progreso', ()=> {
+        const botones = fixture.debugElement.queryAll(By.css('.btn-primary'));
+        botones[0].triggerEventHandler('click', null);
+
+        fixture.detectChanges();
+        const elem = fixture.debugElement.query(By.css('h3')).nativeElement; 
+
+        expect(elem.innerHTML).toContain('45');
+        
+    });
+
+    
 });
